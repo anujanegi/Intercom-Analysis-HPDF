@@ -1,4 +1,4 @@
-from src import app
+from src import app, api
 
 @app.route("/")
 def home():
