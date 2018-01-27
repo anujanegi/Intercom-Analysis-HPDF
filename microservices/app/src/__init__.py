@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask, Blueprint, current_app, request, json
 
 app = Flask(__name__)
+api = Blueprint('api',__name__)
 
-# This line adds the hasura example routes form the hasura.py file.
-# Delete these two lines, and delete the file to remove them from your project
-from .hasura import hasura_examples
-app.register_blueprint(hasura_examples)
-
+@api.before_request
+def before_request():
+    if request.json is None:
+        return sender.badRequest("JSON parameters expected")
 from .server import *
+from .send import *

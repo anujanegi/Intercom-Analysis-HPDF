@@ -1,5 +1,7 @@
 flask
 requests
 gunicorn
+python-intercom
+Flask-Mail
 
 # add new packages one per each line

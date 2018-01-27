@@ -1,13 +1,14 @@
 from src import app
-# from flask import jsonify
-
+import sender
 
 @app.route("/")
 def home():
-    return "Hasura Hello World"
+    return "Intercom Analysis - T12PF1"
 
-# Uncomment to add a new URL at /new
-
-# @app.route("/json")
-# def json_message():
-#     return jsonify(message="Hello World")
+@api.route('/getconversation', methods=['POST'])
+def getconversation():
+    days = request.json.get("days", None)
+    hours = request.json.get("hours", None)
+    minutes = request.json.get("minutes", None)
+    time = request.json.get("time", None)
+    emailid = request.json.get("emailid", None)
