@@ -1,5 +1,4 @@
 from src import app
-import sender
 
 @app.route("/")
 def home():

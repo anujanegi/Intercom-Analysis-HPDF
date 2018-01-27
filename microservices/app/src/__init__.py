@@ -8,4 +8,4 @@ def before_request():
     if request.json is None:
         return sender.badRequest("JSON parameters expected")
 from .server import *
-from .send import *
+from .sender import *
