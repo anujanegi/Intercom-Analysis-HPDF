@@ -1,7 +1,7 @@
 - alias: hasura
   config:
     configmap: controller-conf
-    namespace: aspiration67-hasura
+    namespace: belladonna34-hasura
   data: null
-  kubeContext: aspiration67
-  name: aspiration67
+  kubeContext: belladonna34
+  name: belladonna34
