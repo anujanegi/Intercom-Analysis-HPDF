@@ -1,7 +1,7 @@
 - alias: hasura
   config:
     configmap: controller-conf
-    namespace: belladonna34-hasura
+    namespace: atonal20-hasura
   data: null
-  kubeContext: belladonna34
-  name: belladonna34
+  kubeContext: atonal20
+  name: atonal20
