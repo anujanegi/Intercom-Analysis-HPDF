@@ -46,5 +46,5 @@ def getconversation():
     return jsonify(code=200, message="Done"), 200
 
 @app.route('/test')
-def test:
+def test():
     return current_app.send_static_file('test.html')
