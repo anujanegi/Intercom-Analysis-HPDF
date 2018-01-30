@@ -18,7 +18,7 @@ def send_email(msg, emailid):
     mail.send(msg)
 
 """
-@app.route('/)
+@app.route('/'')
 def home():
     return "Intercom Analysis - T12PF1"
 
@@ -45,6 +45,6 @@ def getconversation():
 
     return jsonify(code=200, message="Done"), 200
 
-@app.route(''/test')
-def test():
+@app.route("/test")
+def test:
     return current_app.send_static_file('test.html')
