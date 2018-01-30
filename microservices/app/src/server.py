@@ -1,5 +1,5 @@
 from src import app
-from flask import json, jsonify, request
+from flask import json, jsonify, request, current_app
 from flask_mail import Mail, Message
 from intercom.client import Client
 
@@ -20,7 +20,7 @@ def send_email(msg, emailid):
 
 @app.route("/")
 def home():
-    return "Intercom Analysis - T12PF1"
+    return "<h2>Intercom Analysis - T12PF1<h2><br>go to /test to help add conversations"
 
 @app.route('/getconversation', methods=['POST'])
 def getconversation():
@@ -44,3 +44,7 @@ def getconversation():
         send_email(message, emailid)
 
     return jsonify(code=200, message="Done"), 200
+
+@app.route("/test")
+def test:
+    return current_app.send_static_file('test.html')
