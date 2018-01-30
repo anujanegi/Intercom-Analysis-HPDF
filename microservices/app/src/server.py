@@ -20,7 +20,7 @@ def send_email(msg, emailid):
 
 @app.route("/")
 def home():
-    return "<h2>Intercom Analysis - T12PF1<h2><br>go to /test to help add conversations"
+    return "Intercom Analysis - T12PF1"
 
 @app.route('/getconversation', methods=['POST'])
 def getconversation():
