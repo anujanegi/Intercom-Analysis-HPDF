@@ -5,6 +5,7 @@ from intercom.client import Client
 import intercomconfig
 import conversation
 import timestamp
+import response_sender
 
 mail = Mail(app)
 
@@ -25,7 +26,7 @@ def home():
 @app.route('/maillistofconversations', methods=['POST'])
 def maillistofconversations():
     if request.json is None:
-        return jsonify(code=400, message="JSON parameters expected"), 400
+        bad_request(JSON parameters expected)
 
     days = request.json.get("days", None)
     hours = request.json.get("hours", None)
@@ -33,33 +34,25 @@ def maillistofconversations():
     time = request.json.get("time", None)
     emailid = request.json.get("emailid", None)
 
-    #calculate open time acceptable as per user
     try:
-        open_time = calculate_open_time(minus_time(days, hours, minutes))
-    except Exception as e:
-        return jsonify(code=500, message=str(e)), 500
-
-    #configure intercom with your extended access token
-    #edit intercomconfig.py with your token
-    try:
+        # configure intercom with your extended access token
+        # edit intercomconfig.py with your token
         intercom = configure_client()
-    except Exception as e:
-        return jsonify(code=500, message=str(e)), 500
 
-    #get open conversations
-    try:
+        # get open conversations
         open_convo = getconversations(intercom)
-    except Exception as e:
-        return jsonify(code=500, message=str(e)), 500
 
-    #get filtered conversations
-    try:
+        # calculate open time acceptable as per user
+        open_time = calculate_open_time(minus_time(days, hours, minutes))
+
+        # get filtered conversations
         filter_convo = filterconversations(open_convo, open_time)
-    except Exception as e:
-        return jsonify(code=500, message=str(e)), 500
 
-    #send_email(message, emailid)
-    return jsonify(code=200, message="Done"), 200
+    except Exception as e:
+        Error(str(e))
+
+    # send_email(message, emailid)
+    return OK()
 
 @app.route('/test')
 def test():
