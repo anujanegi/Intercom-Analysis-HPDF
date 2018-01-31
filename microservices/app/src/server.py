@@ -29,10 +29,12 @@ def maillistofconversations():
         # get filtered conversations
         filter_convo = filterconversations(open_convo, open_time)
 
+        # get body and send email
+        send_email(getbody(filter_convo), emailid)
+
     except Exception as e:
         Error(500, str(e))
 
-    # send_email(message, emailid)
     return OK()
 
 @app.route('/test')
