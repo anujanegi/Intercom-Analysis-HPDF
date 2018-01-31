@@ -1,14 +1,4 @@
-from src import app
-
-def send_email(body, emailid):
-    try:
-        mail.connect()
-    except Exception as e:
-        return jsonify(code=500, message=str(e)), 500
-
-    msg = Message(subject="Open conversations", body=body, sender="abc@example.com", recipients=[emailid])
-    mail.send(msg)
-
+from src import app, mail
 
 @app.route('/')
 def home():
@@ -40,7 +30,7 @@ def maillistofconversations():
         filter_convo = filterconversations(open_convo, open_time)
 
     except Exception as e:
-        Error(str(e))
+        Error(500, str(e))
 
     # send_email(message, emailid)
     return OK()
