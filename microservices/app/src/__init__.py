@@ -6,7 +6,7 @@ from intercomconfig import *
 from conversation import *
 from timestamp import *
 from response_sender import *
-from email import send_email, getbody
+from email import *
 
 app = Flask(__name__)
 mail = Mail(app)
