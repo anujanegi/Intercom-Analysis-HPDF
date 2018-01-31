@@ -2,10 +2,10 @@ from src import app
 from flask import json, jsonify, request, current_app
 from flask_mail import Mail, Message
 from intercom.client import Client
-import intercomconfig
-import conversation
-import timestamp
-import response_sender
+from intercomconfig import *
+from conversation import *
+from timestamp import *
+from response_sender import *
 
 mail = Mail(app)
 
