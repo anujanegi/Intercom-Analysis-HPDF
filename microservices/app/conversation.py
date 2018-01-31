@@ -8,7 +8,7 @@ def getconversations(intercom):
     return open_convo
 
 def filterconversations(conversationlist, open_time):
-    filtered _convo = []
+    filtered_convo = []
     for convo in conversationlist:
         if(int(convo['created_at']) >= int(open_time)):
             # append to filtered_convo list if open for greater than open_time
