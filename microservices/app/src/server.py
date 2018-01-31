@@ -4,6 +4,7 @@ from flask_mail import Mail, Message
 from intercom.client import Client
 import intercomconfig
 import conversation
+import timestamp
 
 mail = Mail(app)
 
