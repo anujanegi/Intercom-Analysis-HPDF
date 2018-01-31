@@ -1,3 +1,5 @@
+from src import app
+
 def send_email(body, emailid):
     try:
         mail.connect()
