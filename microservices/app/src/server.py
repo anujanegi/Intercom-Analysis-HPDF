@@ -33,6 +33,12 @@ def maillistofconversations():
     time = request.json.get("time", None)
     emailid = request.json.get("emailid", None)
 
+    #calculate open time acceptable as per user
+    try:
+        open_time = calculate_open_time(minus_time(days, hours, minutes))
+    except Exception as e:
+        return jsonify(code=500, message=str(e)), 500
+
     #configure intercom with your extended access token
     #edit intercomconfig.py with your token
     try:
@@ -42,14 +48,17 @@ def maillistofconversations():
 
     #get open conversations
     try:
-        getconversations(intercom)
+        open_convo = getconversations(intercom)
     except Exception as e:
         return jsonify(code=500, message=str(e)), 500
 
+    #get filtered conversations
+    try:
+        filter_convo = filterconversations(open_convo, open_time)
+    except Exception as e:
+        return jsonify(code=500, message=str(e)), 500
 
-        #filter and find conversations open for X days from today by parameter created_at
-
-        #send_email(message, emailid)
+    #send_email(message, emailid)
     return jsonify(code=200, message="Done"), 200
 
 @app.route('/test')
