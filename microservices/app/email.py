@@ -42,4 +42,4 @@ def send_email(body, emailid):
     try:
         mail.send(msg)
     except Exception as e:
-        Error(str(e))
+        Error(500, str(e))
