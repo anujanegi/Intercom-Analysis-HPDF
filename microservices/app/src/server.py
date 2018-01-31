@@ -7,9 +7,6 @@ import conversation
 
 mail = Mail(app)
 
-def configure_client():
-    intercom = Client(personal_access_token='extended_access_token')
-
 def send_email(body, emailid):
     try:
         mail.connect()
@@ -38,15 +35,17 @@ def maillistofconversations():
     #configure intercom with your extended access token
     #edit intercomconfig.py with your token
     try:
-        configure_client()
+        intercom = configure_client()
     except Exception as e:
         return jsonify(code=500, message=str(e)), 500
 
     #get open conversations
     try:
-        getconversations()
+        getconversations(intercom)
     except Exception as e:
         return jsonify(code=500, message=str(e)), 500
+
+
         #filter and find conversations open for X days from today by parameter created_at
 
         #send_email(message, emailid)

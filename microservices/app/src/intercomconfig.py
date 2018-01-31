@@ -4,3 +4,4 @@ from intercom.client import Client
 
 def configure_client():
     intercom = Client(personal_access_token='extended_access_token_here')
+    return intercom
