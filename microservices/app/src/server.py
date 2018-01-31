@@ -26,7 +26,7 @@ def home():
 @app.route('/maillistofconversations', methods=['POST'])
 def maillistofconversations():
     if request.json is None:
-        bad_request(JSON parameters expected)
+        bad_request("JSON parameters expected")
 
     days = request.json.get("days", None)
     hours = request.json.get("hours", None)
