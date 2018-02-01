@@ -7,4 +7,4 @@ def Error(code, message):
     return jsonify(code=code, message=message), code
 
 def OK():
-    return jsonify(code=200, message="Email sent!"), 200
+    return jsonify(code=200, message="Email automated!"), 200

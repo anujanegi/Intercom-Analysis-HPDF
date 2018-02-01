@@ -29,7 +29,7 @@ def maillistofconversations():
             open_convo = getconversations(intercom)
 
             # calculate open time acceptable as per user
-            open_time = calculate_open_time(minus_time(days, hours, minutes))
+            open_time = calculate_open_time(minus_time(int(days), int(hours), int(minutes)))
 
             # get filtered conversations
             filter_convo = filterconversations(open_convo, open_time)
