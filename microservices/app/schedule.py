@@ -6,12 +6,12 @@ from apscheduler.triggers.interval import IntervalTrigger
 
 def getseconds(hour, minute):
     x=datetime.today()
-    y=x.replace(day=x.day, hour=hour, minute=minute, second=0, microsecond=0)
-    delta_t=y-x
+    delta_t = (((int(x.hour) - int(hour))*3600) + ((int(x.minute) - int(minute))*60))
     if (delta_t > 0):
         sec = 86400 - delta_t
     else:
         sec = 86400 - delta_t
+    return sec
 
 def schedule(sec, function):
     scheduler = BackgroundScheduler()
