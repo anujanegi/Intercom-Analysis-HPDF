@@ -7,6 +7,7 @@ from conversation import *
 from timestamp import *
 from response_sender import *
 from email import *
+from schedule import *
 
 app = Flask(__name__)
 mail = Mail(app)
