@@ -13,6 +13,7 @@ def config_email():
     ADMINS = ['test@gmail.com']
 
     mail.init_app(app)
+    return ADMINS
 
 def getattributes(conversation):
     #parse to get id and message body for each conversation
@@ -32,12 +33,13 @@ def getbody(conversationlist):
 
 def send_email(body, emailid):
     try:
-        config_email()
+        ADMINS = config_email()
         mail.connect()
     except Exception as e:
         Error(111, str(e))
 
-    msg = Message(subject="Open conversations", body=body, sender=ADMINS[0], recipients=emailid)
+    RECP = [emailid]
+    msg = Message(subject="Open conversations", body=body, sender=ADMINS[0], recipients=RECP)
 
     try:
         mail.send(msg)
