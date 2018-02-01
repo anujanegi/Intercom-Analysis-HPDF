@@ -16,6 +16,9 @@ def maillistofconversations():
     time_minute = request.json.get("time_minute", None)
     emailid = request.json.get("emailid", None)
 
+    # get seconds at which the schedule needs to be triggered
+    seconds = getseconds(time_hour, time_minute)
+
     def daily_email():
         try:
             # configure intercom with your extended access token
@@ -37,7 +40,7 @@ def maillistofconversations():
         except Exception as e:
             Error(500, str(e))
 
-    schedule(time_hour, time_minute, daily_email)
+    schedule(seconds, daily_email)
 
     return OK()
 
