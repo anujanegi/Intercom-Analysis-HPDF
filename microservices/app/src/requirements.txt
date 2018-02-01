@@ -3,5 +3,6 @@ requests
 gunicorn
 python-intercom
 Flask-Mail
+apscheduler
 
 # add new packages one per each line
