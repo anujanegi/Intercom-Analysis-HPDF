@@ -4,8 +4,8 @@ from src import app, mail
 def home():
     return "Intercom Analysis - T12PF1"
 
-@app.route('/maillistofconversations', methods=['POST'])
-def maillistofconversations():
+@app.route('/mailconversations', methods=['POST'])
+def mailconversations():
     if request.json is None:
         bad_request("JSON parameters expected")
 
