@@ -1,0 +1,12 @@
+- args:
+    permission:
+      columns:
+      - email
+      - days
+      - hours
+      - minutes
+      - time
+      filter: {}
+    role: anonymous
+    table: automation_details
+  type: create_update_permission

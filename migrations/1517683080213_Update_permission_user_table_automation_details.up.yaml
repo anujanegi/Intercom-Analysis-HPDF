@@ -1,0 +1,16 @@
+- args:
+    role: user
+    table: automation_details
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - days
+      - email
+      - hours
+      - minutes
+      - time
+      filter: {}
+    role: user
+    table: automation_details
+  type: create_update_permission
