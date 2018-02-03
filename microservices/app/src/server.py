@@ -39,8 +39,8 @@ def mailconversations():
 
         except Exception as e:
             Error(500, str(e))
-
-    schedule(seconds, daily_email)
+    daily_email()
+    #schedule(seconds, daily_email)
 
     return OK()
 
