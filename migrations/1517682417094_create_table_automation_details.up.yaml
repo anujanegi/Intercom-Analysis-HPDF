@@ -1,0 +1,8 @@
+- args:
+    sql: CREATE TABLE "automation_details"("email" text NOT NULL, "days" integer NOT
+      NULL, "hours" integer NOT NULL, "minutes" integer NOT NULL, "time" timetz NOT
+      NULL, PRIMARY KEY ("email") )
+  type: run_sql
+- args:
+    name: automation_details
+  type: add_existing_table_or_view
