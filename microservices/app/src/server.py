@@ -36,7 +36,7 @@ def mailconversations():
 
     # get body and send email
     #send_email(getbody(filter_convo), emailid)
-    return seconds
+    return "hi"
 
 """    except Exception as e:
             Error(500, str(e))
