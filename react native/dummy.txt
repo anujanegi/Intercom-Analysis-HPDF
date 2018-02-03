@@ -1,0 +1,29 @@
+
+        const { TextInputEmail } = this.state;
+        const { TextInputHours } = this.state;
+        const { TextInputMinutes } = this.state;
+ fetch('/info', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+
+                    email: TextInputEmail,
+
+                    hours: TextInputHours,
+
+                    minutes: TextInputMinutes
+
+                })
+
+            }).then((response) => response.json())
+            .then((responseJson) => {
+
+                // Showing response message coming from server after inserting records.
+                Alert.alert(responseJson);
+
+            }).catch((error) => {
+                console.error(error);
+            });
