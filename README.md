@@ -30,7 +30,7 @@ Setup you email server in `email.py` by configuring it with valid credentials.
 
 ### Making the request
 Make a `POST` request to the endpoint `/mailconversations` with the correct headers and body.
-Find API endpoint documentation [here](https://documenter.getpostman.com/view/3487083/automate-open-conversations-email/7TT5oSF)
+Find API endpoint documentation [here](https://documenter.getpostman.com/view/3487083/automate-open-conversations-email/7TT5oSF).
 
 
 ### Note
