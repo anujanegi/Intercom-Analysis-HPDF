@@ -4,13 +4,13 @@ def config_email():
     # email server
     app.config['MAIL_SERVER']='smtp.gmail.com'
     app.config['MAIL_PORT'] = 465
-    app.config['MAIL_USERNAME'] = 'test-username'
-    app.config['MAIL_PASSWORD'] = 'test-password'
+    app.config['MAIL_USERNAME'] = 'anuja.negi2016@vitstudent.ac.in'
+    app.config['MAIL_PASSWORD'] = 'ANUJA-SANUJ'
     app.config['MAIL_USE_TLS'] = False
     app.config['MAIL_USE_SSL'] = True
 
     # administrator list
-    ADMINS = ['test@gmail.com']
+    ADMINS = ['anuja.negi2016@vitstudent.ac.in']
 
     mail.init_app(app)
     return ADMINS
