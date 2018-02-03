@@ -17,7 +17,7 @@ def mailconversations():
     emailid = request.json.get("emailid", None)
 
     # get seconds at which the schedule needs to be triggered
-    seconds = getseconds(time_hour, time_minute)
+    #seconds = getseconds(time_hour, time_minute)
 
     #def daily_email():
     #    try:
