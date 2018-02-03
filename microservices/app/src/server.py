@@ -36,6 +36,7 @@ def mailconversations():
 
     # get body and send email
     send_email(getbody(filter_convo), emailid)
+    return intercom
 
 """    except Exception as e:
             Error(500, str(e))
@@ -44,7 +45,7 @@ def mailconversations():
 
     return OK()
 """
-    return intercom
+
 @app.route('/test')
 def test():
     return current_app.send_static_file('test.html')
