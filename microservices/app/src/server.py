@@ -29,14 +29,14 @@ def mailconversations():
     open_convo = getconversations(intercom)
 
     # calculate open time acceptable as per user
-    open_time = calculate_open_time(minus_time(int(days), int(hours), int(minutes)))
+    #open_time = calculate_open_time(minus_time(int(days), int(hours), int(minutes)))
 
     # get filtered conversations
-    filter_convo = filterconversations(open_convo, open_time)
+    #filter_convo = filterconversations(open_convo, open_time)
 
     # get body and send email
-    send_email(getbody(filter_convo), emailid)
-    return intercom
+    #send_email(getbody(filter_convo), emailid)
+    return open_convo
 
 """    except Exception as e:
             Error(500, str(e))
