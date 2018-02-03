@@ -23,10 +23,10 @@ def mailconversations():
     #    try:
     # configure intercom with your extended access token
     # edit intercomconfig.py with your token
-    intercom = configure_client()
+    #intercom = configure_client()
 
     # get open conversations
-    open_convo = getconversations(intercom)
+    #open_convo = getconversations(intercom)
 
     # calculate open time acceptable as per user
     #open_time = calculate_open_time(minus_time(int(days), int(hours), int(minutes)))
@@ -36,7 +36,7 @@ def mailconversations():
 
     # get body and send email
     #send_email(getbody(filter_convo), emailid)
-    return open_convo
+    return seconds
 
 """    except Exception as e:
             Error(500, str(e))
