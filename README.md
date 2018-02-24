@@ -14,6 +14,8 @@ Custom service that integrates with Intercom APIs and sends out daily emails wit
 2. Install on your device.
 3. Enter details as per requirement of open conversations and submit.
 
+### Configure
+
 #### Configure Intercom
 Add your extended access intercom token in `intercomconfig.py` to enable connection to intercom.
 ```
@@ -37,6 +39,19 @@ Setup you email server in `email.py` by configuring it with valid credentials.
 ####  Making the request
 Make a `POST` request to the endpoint `/mailconversations` with the correct headers and body.
 Find API endpoint documentation [here](https://documenter.getpostman.com/view/3487083/automate-open-conversations-email/7TT5oSF).
+###### Headers
+**`Content-type`**                  ` application/json`
+###### Body
+```
+{
+	"days" : "days",
+	"hours" : "hours",
+	"minutes" : "minutes",
+	"time_hour" : "time_hour",
+	"time_minute" : "time_minute",
+	"emailid" : "emailid"
+}
+```
 
 ### UI Details
 This is a fully functioning native applications using react-native components for UI and Python-flask for back end.
@@ -44,21 +59,21 @@ This is a fully functioning native applications using react-native components fo
 #### Configure
 The react-native code lies in Intercom-open_conversations/react-native directory.
 
-1.Install` node_modules`. Run `npm install` from the `react-native` direcotry.
-
-2.`$ cd react-native && npm install`.
-
-3.Get your cluster name. Run `hasura cluster status`. Copy the cluster name.
-
-4.Go to react-native/src/hasuraAPi.js. Add your cluster name to this file.
-clusterName = "buddy20" //here "buddy20" is the cluster name. Replace this with your own.
-
+1. Install` node_modules`. Run `npm install` from the `react-native` directory.
+2. `$ cd react-native && npm install`.
+3. Get your cluster name. Run `hasura cluster status`. Copy the cluster name.
+4. Go to react-native/src/hasuraAPi.js. Add your cluster name to this file.
 
 #### Emulating
-1.Keep the android emulator running.
-2.Run  `react-native run-android`from the react-native directory.
+
+1. Keep the android emulator running.
+2. Run  `react-native run-android`from the react-native directory.
 App will open up on your emulator.
 
 
 ###  Note
 This is a dummy and will not work unless you have an Intercom account with proper access and edit in your extended access token and your email credentials from which the conversations will be fetched and a daily mail to the user be automated respectively.
+
+### Authors
+1. Anuja Negi - Python FLask
+2. Rishi Kumar - React Native
