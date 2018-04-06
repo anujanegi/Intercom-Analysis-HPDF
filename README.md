@@ -75,5 +75,5 @@ App will open up on your emulator.
 This is a dummy and will not work unless you have an Intercom account with proper access and edit in your extended access token and your email credentials from which the conversations will be fetched and a daily mail to the user be automated respectively.
 
 ### Authors
-1. Anuja Negi - Python FLask
+1. Anuja Negi - Python Flask
 2. Rishi Kumar - React Native
